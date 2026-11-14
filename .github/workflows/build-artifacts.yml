@@ -82,6 +82,7 @@ jobs:
         run: |
           cmake -S third_party/llama.cpp -B third_party/llama.cpp/build_shared \
             -DGGML_SHARED=ON \
+            -DGGML_OPENMP=OFF \
             -DBUILD_SHARED_LIBS=ON \
             -DLLAMA_BUILD_COMMON=OFF \
             -DLLAMA_BUILD_TOOLS=OFF \
@@ -137,6 +138,7 @@ jobs:
         run: |
           cmake -S third_party/llama.cpp -B third_party/llama.cpp/build_shared \
             -DGGML_SHARED=ON \
+            -DGGML_OPENMP=OFF \
             -DBUILD_SHARED_LIBS=ON \
             -DLLAMA_BUILD_COMMON=OFF \
             -DLLAMA_BUILD_TOOLS=OFF \
@@ -203,6 +205,7 @@ jobs:
             -DANDROID_ABI=arm64-v8a \
             -DANDROID_PLATFORM=24 \
             -DGGML_SHARED=ON \
+            -DGGML_OPENMP=OFF \
             -DBUILD_SHARED_LIBS=ON \
             -DLLAMA_BUILD_COMMON=OFF \
             -DLLAMA_BUILD_TOOLS=OFF \
