@@ -27,7 +27,7 @@ bool LlamaModel::_load_tokenize_internal(const String &p_text, bool p_add_bos, P
     CharString text_utf8 = p_text.utf8();
     const int32_t text_len = static_cast<int32_t>(text_utf8.length());
 
-    int32_t token_count = llama_tokenize(vocab, text_utf8.get_data(), text_len, nullptr, 0, p_add_bos, false);
+    int32_t token_count = llama_tokenize(vocab, text_utf8.get_data(), text_len, nullptr, 0, p_add_bos, true);
     if (token_count == INT32_MIN) {
         return false;
     }
@@ -40,7 +40,7 @@ bool LlamaModel::_load_tokenize_internal(const String &p_text, bool p_add_bos, P
     }
 
     std::vector<llama_token> tokens(token_count);
-    int32_t rc = llama_tokenize(vocab, text_utf8.get_data(), text_len, tokens.data(), token_count, p_add_bos, false);
+    int32_t rc = llama_tokenize(vocab, text_utf8.get_data(), text_len, tokens.data(), token_count, p_add_bos, true);
     if (rc < 0) {
         return false;
     }

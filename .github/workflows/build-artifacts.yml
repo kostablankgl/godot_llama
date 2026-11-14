@@ -223,10 +223,10 @@ jobs:
 
       - name: Copy llama runtime libs
         run: |
-          cp -v third_party/llama.cpp/build_android/src/libllama.so* addons/godot_llama/bin/ || true
-          cp -v third_party/llama.cpp/build_android/ggml/src/libggml.so* addons/godot_llama/bin/ || true
-          cp -v third_party/llama.cpp/build_android/ggml/src/libggml-base.so* addons/godot_llama/bin/ || true
-          cp -v third_party/llama.cpp/build_android/ggml/src/libggml-cpu.so* addons/godot_llama/bin/ || true
+          cp -v third_party/llama.cpp/build_android/bin/libllama.so* addons/godot_llama/bin/ || true
+          cp -v third_party/llama.cpp/build_android/bin/libggml.so* addons/godot_llama/bin/ || true
+          cp -v third_party/llama.cpp/build_android/bin/libggml-base.so* addons/godot_llama/bin/ || true
+          cp -v third_party/llama.cpp/build_android/bin/libggml-cpu.so* addons/godot_llama/bin/ || true
 
       - name: Stage artifact payload
         run: |
